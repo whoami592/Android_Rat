@@ -1,0 +1,21 @@
+# Device info
+getprop ro.build.version.release; getprop ro.product.model
+whoami; id; uname -a
+
+# Network recon
+ip a; netstat -tuln
+
+# File operations
+ls /sdcard; find /sdcard -name "*.txt" 2>/dev/null | head
+
+# SMS/Contacts (on rooted or adb-accessible devices via content provider)
+content query --uri content://sms/inbox 2>/dev/null
+
+# Take screenshot (Android 10+ shell)
+screencap -p /sdcard/screen.png
+
+# Upload/download via base64 over the shell
+# Download file from device:
+base64 /sdcard/somefile | gzip
+# Upload file to device (paste on client):
+echo "<base64>" | base64 -d | gunzip > /sdcard/file

